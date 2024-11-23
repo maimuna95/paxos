@@ -1,0 +1,112 @@
+PAXOS Application: 
+
+In my application I have three files: 
+1. CouncilElection.java: This file has the entry point of the application. Initializes council members, starts threads, and initiates the election process.
+
+2. CouncilMember.java: This file implements the logic for council members. Each member listens for incoming messages, votes, and processes election proposals.
+
+3. CouncilElectionTest.java: It contains unit tests to verify the correctness of the election process under different scenarios.
+
+How to run the application:
+
+1. Open a terminal and compile the source files using javac *.java
+2. Run the Application by running the CouncilElection class java CouncilElection
+3. Run the Test files to execute the test cases
+4. The output will display logs of the election process, including proposals, votes, and the election result. Below is an example of how the output might look:
+
+CouncilMember M1 started and listening on port 5001
+CouncilMember M2 started and listening on port 5002
+CouncilMember M3 started and listening on port 5003
+CouncilMember M4 started and listening on port 5004
+CouncilMember M5 started and listening on port 5005
+M1 is proposing candidate: M1
+M2 is proposing candidate: M2
+M1 received message: PROPOSE M1
+M4 received message: PROPOSE M1
+M5 received message: PROPOSE M1
+M1 received message: PROPOSE M2
+M1 voted for M2
+M3 received message: PROPOSE M1
+M5 voted for M1
+M1 voted for M1
+M4 voted for M1
+M3 voted for M1
+Broadcasting: ACCEPT M1
+Broadcasting: ACCEPT M1
+[ACTION] M1 proposed M1 for president.
+[ACTION] M2 proposed M2 for president.
+Broadcasting: ACCEPT M1
+[ACTION] M1 proposed M1 for president.
+[ACTION] M2 proposed M2 for president.
+[VOTE] M5 voted for M1.
+Broadcasting: ACCEPT M1
+[ACTION] M1 proposed M1 for president.
+[ACTION] M2 proposed M2 for president.
+[ACTION] M1 proposed M1 for president.
+[ACTION] M2 proposed M2 for president.
+[VOTE] M5 voted for M1.
+[VOTE] M1 voted for M1.
+[VOTE] M1 voted for M2.
+[VOTE] M4 voted for M1.
+[VOTE] M3 voted for M1.
+[VOTE] M5 voted for M1.
+[VOTE] M1 voted for M1.
+[VOTE] M1 voted for M2.
+[VOTE] M4 voted for M1.
+[VOTE] M3 voted for M1.
+[VOTE] M1 voted for M1.
+[VOTE] M1 voted for M2.
+[VOTE] M4 voted for M1.
+[VOTE] M5 voted for M1.
+[VOTE] M1 voted for M1.
+[VOTE] M1 voted for M2.
+[VOTE] M4 voted for M1.
+[VOTE] M3 voted for M1.
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[VOTE] M3 voted for M1.
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+M2 received message: PROPOSE M1
+M2 voted for M1
+Broadcasting: ACCEPT M1
+[ACTION] M1 proposed M1 for president.
+[ACTION] M2 proposed M2 for president.
+[VOTE] M5 voted for M1.
+[VOTE] M1 voted for M1.
+[VOTE] M1 voted for M2.
+[VOTE] M4 voted for M1.
+[VOTE] M3 voted for M1.
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[VOTE] M2 voted for M1.
+[BROADCAST] ACCEPT M1
+
+=== ELECTION LOG ===
+[ACTION] M1 proposed M1 for president.
+[ACTION] M2 proposed M2 for president.
+[VOTE] M5 voted for M1.
+[VOTE] M1 voted for M1.
+[VOTE] M1 voted for M2.
+[VOTE] M4 voted for M1.
+[VOTE] M3 voted for M1.
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[BROADCAST] ACCEPT M1
+[VOTE] M2 voted for M1.
+[BROADCAST] ACCEPT M1
